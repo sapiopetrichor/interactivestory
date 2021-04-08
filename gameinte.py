@@ -1,17 +1,11 @@
 from tkinter import *
-from PIL import ImageTK,Image 
+from PIL import ImageTk, Image
 
-#hellotest
 root = Tk()
-root.iconbitmap ('~/Desktop/brain-png.png') #topicon
-
-#creating a label widget
-mylabel = Label(root, text ="Με το νου σου!")
-#putting the label onto the screen
-mylabel.pack()
-
-my_img = ImageTk.PhotoImage(Image.open("brain-png.png")) #put image
-
+canvas = Canvas (root, width = 300, height = 300)
+canvas.pack()
+img = ImageTk.PhotoImage (Image.open("mainscreen.jpg")) #put image
+canvas.create_image(20, 20, anchor=NW, image=img)
 root.mainloop()
 
 import time #time between text
